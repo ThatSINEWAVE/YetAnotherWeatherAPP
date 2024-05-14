@@ -1,12 +1,111 @@
+/* Light Theme */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f5f5f5;
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: 999;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.theme-toggle {
+  padding: 5px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.theme-icon {
+  font-size: 24px;
+  margin: 0 10px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #fff;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  background-color: #333;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 .container {
@@ -16,11 +115,14 @@ body {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   text-align: center;
   border-radius: 12px;
+  margin: 80px auto;
+  transition: background-color 0.3s ease;
 }
 
 h1 {
   margin-top: 0;
   color: #333;
+  transition: color 0.3s ease;
 }
 
 .location-input {
@@ -62,30 +164,31 @@ h1 {
   font-weight: bold;
 }
 
-.location, .current-weather {
+.location,
+.current-weather {
   margin-bottom: 15px;
 }
 
 #weather-icon {
   font-size: 100px;
   color: #333;
+  transition: color 0.3s ease;
 }
 
 .temperature {
   font-size: 24px;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .wind-speed {
   color: #666;
+  transition: color 0.3s ease;
 }
 
 .footer {
   background-color: transparent;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  margin-top: auto;
   padding: 10px;
   text-align: center;
   z-index: 999;
@@ -96,4 +199,41 @@ h1 {
   text-decoration: none;
   margin: 0 15px;
   font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-theme .theme-icon {
+  color: #fff;
+}
+
+body.dark-theme .container {
+  background-color: #222;
+}
+
+body.dark-theme h1,
+body.dark-theme #weather-icon,
+body.dark-theme .temperature,
+body.dark-theme .wind-speed,
+body.dark-theme .social-icons a {
+  color: #fff;
+}
+
+body.dark-theme #location-input {
+  background-color: #444;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark-theme #location-submit {
+  background-color: #555;
+}
+
+body.dark-theme #location-submit:hover {
+  background-color: #666;
 }
