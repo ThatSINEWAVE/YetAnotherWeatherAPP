@@ -78,6 +78,45 @@ function updateWeatherUI(data, location) {
   weatherInfo.style.display = 'block';
 }
 
+// Get the theme switch and container elements
+const themeSwitch = document.getElementById('theme-switch');
+const container = document.querySelector('body');
+
+// Function to set the theme
+function setTheme(theme) {
+  if (theme === 'dark') {
+    container.classList.add('dark-theme');
+    localStorage.setItem('theme', 'dark');
+  } else {
+    container.classList.remove('dark-theme');
+    localStorage.setItem('theme', 'light');
+  }
+}
+
+// Get the user's preference from localStorage
+const savedTheme = localStorage.getItem('theme');
+
+// Set the initial theme based on the user's preference or system setting
+if (savedTheme) {
+  setTheme(savedTheme);
+} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  setTheme('dark');
+} else {
+  setTheme('light');
+}
+
+// Set the theme switch state based on the saved theme
+if (savedTheme === 'dark') {
+  themeSwitch.checked = true;
+} else {
+  themeSwitch.checked = false;
+}
+
+// Update the theme when the switch is toggled
+themeSwitch.addEventListener('change', () => {
+  setTheme(themeSwitch.checked ? 'dark' : 'light');
+});
+
 // Add event listener to the location input form
 const locationInput = document.getElementById('location-input');
 const locationSubmit = document.getElementById('location-submit');
