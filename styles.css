@@ -13,7 +13,7 @@ body {
   max-width: 400px;
   padding: 20px;
   background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   text-align: center;
   border-radius: 12px;
 }
@@ -59,6 +59,7 @@ h1 {
 .weather-info {
   display: none;
   margin-top: 20px;
+  font-weight: bold;
 }
 
 .location, .current-weather {
@@ -66,7 +67,7 @@ h1 {
 }
 
 #weather-icon {
-  font-size: 48px;
+  font-size: 100px;
   color: #333;
 }
 
@@ -77,4 +78,22 @@ h1 {
 
 .wind-speed {
   color: #666;
+}
+
+.footer {
+  background-color: transparent;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  z-index: 999;
+}
+
+.social-icons a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 24px;
 }
