@@ -4,6 +4,7 @@
   "short_name": "YetAnotherWeatherApp",
   "start_url": "/YetAnotherWeatherAPP",
   "orientation": "portrait",
+  "display": "minimal-ui",
   "lang": "en-US",
   "icons": [
     {
