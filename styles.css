@@ -164,6 +164,12 @@ h1 {
   font-weight: bold;
 }
 
+.weather-info {
+  display: none;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
 .location,
 .current-weather {
   margin-bottom: 15px;
@@ -175,14 +181,17 @@ h1 {
   transition: color 0.3s ease;
 }
 
-.temperature {
-  font-size: 24px;
+.current-weather #temperature {
+  font-size: 46px;
   font-weight: bold;
   transition: color 0.3s ease;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.wind-speed {
-  color: #666;
+.current-weather #wind-speed {
+  margin-top: 0px;
+  font-size: 16px;
   transition: color 0.3s ease;
 }
 
