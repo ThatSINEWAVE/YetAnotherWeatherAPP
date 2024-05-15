@@ -11,7 +11,7 @@ async function getCoordinates(location) {
 
 // Function to get the current weather data from the API
 async function getCurrentWeather(latitude, longitude) {
-  const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,relativehumidity_2m,dewpoint_2m,rain,showers,snowfall,snow_depth,pressure_msl,surface_pressure,cloud_cover,visibility,wind_speed_10m&forecast_days=1`);
+  const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m,apparent_temperature,relativehumidity_2m,dewpoint_2m,precipitation_probability,rain,showers,snowfall,snow_depth,pressure_msl,surface_pressure,cloud_cover,visibility,wind_speed_10m&forecast_days=1`);
   const data = await response.json();
   return data;
 }
@@ -22,7 +22,10 @@ function updateWeatherUI(data, location) {
   const dateElement = document.getElementById('date');
   const weatherIconElement = document.getElementById('weather-icon');
   const temperatureElement = document.getElementById('temperature');
+  const feelsLikeElement = document.getElementById('feels-like');
   const windSpeedElement = document.getElementById('wind-speed');
+  const humidityElement = document.getElementById('humidity');
+  const rainChanceElement = document.getElementById('rain-chance');
   const weatherInfo = document.querySelector('.weather-info');
 
   // Update the UI elements with the weather data
@@ -74,7 +77,10 @@ function updateWeatherUI(data, location) {
 
   weatherIconElement.className = `fas ${iconClass}`;
   temperatureElement.textContent = `${data.current_weather.temperature}°C`;
+  feelsLikeElement.textContent = `Feels Like: ${data.hourly.apparent_temperature[0]}°C`;
   windSpeedElement.textContent = `Wind Speed: ${data.current_weather.windspeed} m/s`;
+  humidityElement.textContent = `Humidity: ${data.hourly.relativehumidity_2m[0]} %`;
+  rainChanceElement.textContent = `Rain Chance: ${data.hourly.precipitation_probability[0]} %`;
   weatherInfo.style.display = 'block';
 }
 
