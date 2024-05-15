@@ -1,13 +1,13 @@
 <div align="center">
 
-# Yet Another Weather App
+# [Yet Another Weather App](https://thatsinewave.github.io/YetAnotherWeatherAPP)
 
 Welcome to Yet Another Weather App! Because, you know, the world definitely needs another one of these.
 This is a simple weather application built out of sheer boredom.
 It fetches weather data from the Open Meteo API based on user-provided location information and displays it in a minimalistic UI.
 Nothing groundbreaking here, just another addition to the millions of weather apps out there.
 
-![WeatherAPP](https://github.com/ThatSINEWAVE/YetAnotherWeatherAPP/assets/133239148/97345366-2883-4ac6-abe9-d7c73cef0cd4)
+![WeatherAPP](https://github.com/ThatSINEWAVE/YetAnotherWeatherAPP/assets/133239148/7f1f8a27-015d-41fc-b584-43b41f52627a)
 
 </div>
 
