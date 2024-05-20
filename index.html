@@ -1,66 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather App</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="site-data/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="180x180" href="site-data/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="site-data/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="site-data/favicon-16x16.png">
-  <link rel="manifest" href="site-data/site.webmanifest">
-</head>
-
-<body>
-
-  <header class="header">
-    <div class="theme-toggle">
-      <i class="fas fa-sun theme-icon"></i>
-      <label class="switch">
-        <input type="checkbox" id="theme-switch">
-        <span class="slider round"></span>
-      </label>
-      <i class="fas fa-moon theme-icon"></i>
-    </div>
-  </header>
-
-  <div class="container">
-    <h1>Yet Another Weather App</h1>
-    <div class="location-input">
-      <input type="text" id="location-input" placeholder="Enter City, Country">
-      <button id="location-submit">Check</button>
-    </div>
-    <div class="weather-info" style="display: none;">
-      <div class="location">
-        <h2 id="city"></h2>
-        <p id="date"></p>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="site-data/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="site-data/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="site-data/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="site-data/favicon-16x16.png">
+    <link rel="manifest" href="site-data/site.webmanifest">
+  </head>
+  <body>
+    <header class="header">
+      <div class="theme-toggle">
+        <i class="fas fa-sun theme-icon"></i>
+        <label class="switch">
+          <input type="checkbox" id="theme-switch">
+          <span class="slider round"></span>
+        </label>
+        <i class="fas fa-moon theme-icon"></i>
       </div>
-      <div class="current-weather">
-        <i id="weather-icon"></i>
-        <p id="temperature"></p>
-        <p id="feels-like"></p>
-        <p id="wind-speed"></p>
-        <p id="humidity"></p>
-        <p id="rain-chance"></p>
+    </header>
+    <div class="container">
+      <h1>Yet Another Weather App</h1>
+      <div class="location-input">
+        <input type="text" id="location-input" placeholder="Enter City, Country">
+        <button id="location-submit">Check</button>
+      </div>
+      <div class="weather-info" style="display: none;">
+        <div class="location">
+          <h2 id="city"></h2>
+          <p id="date"></p>
+        </div>
+        <div class="current-weather">
+          <i id="weather-icon"></i>
+          <p id="temperature"></p>
+          <p id="feels-like"></p>
+          <p id="wind-speed"></p>
+          <p id="humidity"></p>
+          <p id="rain-chance"></p>
+        </div>
       </div>
     </div>
-  </div>
-
-  <footer class="footer">
-    <div class="social-icons">
-      <a href="https://discord.com/invite/2nHHHBWNDw" target="_blank"><i class="fab fa-discord"></i></a>
-      <a href="https://github.com/ThatSINEWAVE/YetAnotherWeatherAPP" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://ko-fi.com/thatsinewave" target="_blank"><i class="fas fa-coffee"></i></a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-
-</body>
-
+    <footer class="footer">
+      <div class="social-icons">
+        <a href="https://discord.com/invite/2nHHHBWNDw" target="_blank">
+          <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://github.com/ThatSINEWAVE/YetAnotherWeatherAPP" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://ko-fi.com/thatsinewave" target="_blank">
+          <i class="fas fa-coffee"></i>
+        </a>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
